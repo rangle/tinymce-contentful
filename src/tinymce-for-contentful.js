@@ -60,7 +60,9 @@ window.contentfulExtension.init(function (api) {
         '.body-large { font-size: 1rem; font-weight: 500; }' +
         '.body-medium { font-size: 1rem; font-weight: 400; }' +
         '.body-small { font-size: 0.75rem; font-weight: 400; }' +
-        '.editorial { font-size: 1.25rem; font-weight: 400; }',
+        '.editorial { font-size: 1.25rem; font-weight: 400; }' +
+        'table { border: 1px dotted grey }' +
+        'tr { border-bottom: 1px dotted grey }',
       init_instance_callback: function (editor) {
         var listening = true;
 
