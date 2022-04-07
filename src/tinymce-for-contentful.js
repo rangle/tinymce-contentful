@@ -21,12 +21,21 @@ window.contentfulExtension.init(function (api) {
       selector: '#editor',
       plugins: p,
       toolbar: tb,
-      menubar: mb,
+      menubar: mb, 
+      menu: {
+        grid: {
+            title: "Grid",
+            items: "inserttable"
+        }
+      },
       min_height: 600,
       max_height: 750,
       autoresize_bottom_margin: 15,
       resize: false,
-      image_caption: true,
+      // image_caption: true,
+      // color_picker_callback: function(callback, value) {
+      //   callback('#FF00FF');
+      // },
       style_formats: [
         { title: 'Large Heading', block: 'h1', attributes: { class: '' } },
         { title: 'Medium Heading', block: 'h2', attributes: { class: '' } },
