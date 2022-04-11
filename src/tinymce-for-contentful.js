@@ -35,35 +35,32 @@ window.contentfulExtension.init(function (api) {
       max_height: 750,
       autoresize_bottom_margin: 15,
       resize: false,
-      // image_caption: true,
-      // color_picker_callback: function(callback, value) {
-      //   callback('#FF00FF');
-      // },
+      image_caption: true,
       style_formats: [
         { title: 'Large Heading', block: 'h1', attributes: { class: '' } },
         { title: 'Medium Heading', block: 'h2', attributes: { class: '' } },
         { title: 'Small Heading', block: 'h3', attributes: { class: '' } },
-        { title: 'Editorial', block: 'p', attributes: { class: 'editorial' } },
+        { title: 'Editorial', block: 'p', attributes: { class: 'ds-editorial' } },
         {
           title: 'Large Body',
           block: 'p',
-          attributes: { class: 'body-large' },
+          attributes: { class: 'ds-large-body' },
         },
         { title: 'Medium Body', block: 'p', attributes: { class: '' } },
         {
           title: 'Small Body',
           block: 'p',
-          attributes: { class: 'body-small' },
+          attributes: { class: 'ds-small-body' },
         },
       ],
       content_style:
         'h1 { font-size: 1.5rem; font-weight: 400; }' +
         'h2 { font-size: 1.25rem; font-weight: 500; }' +
-        'h3 { font-size: 1rem; font-weight: 500; }' +
-        '.body-large { font-size: 1rem; font-weight: 500; }' +
-        '.body-medium { font-size: 1rem; font-weight: 400; }' +
-        '.body-small { font-size: 0.75rem; font-weight: 400; }' +
-        '.editorial { font-size: 1.25rem; font-weight: 400; }' +
+        'h3 { font-size: 1.125rem; font-weight: 500; }' +
+        '.ds-large-body { font-size: 1.125rem; font-weight: 400; }' +
+        '.ds-medium-body { font-size: 0.875rem; font-weight: 400; }' +
+        '.ds-small-body { font-size: 0.625rem; font-weight: 400; }' +
+        '.ds-editorial { font-size: 1.25rem; font-weight: 400; }' +
         'table { border: 1px dotted grey }' +
         'tr { border-bottom: 1px dotted grey }',
       init_instance_callback: function (editor) {
