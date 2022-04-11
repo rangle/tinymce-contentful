@@ -28,6 +28,9 @@ window.contentfulExtension.init(function (api) {
             items: "inserttable"
         }
       },
+      textcolor_map: [
+        "#D44527", "Red-01"
+      ],
       min_height: 600,
       max_height: 750,
       autoresize_bottom_margin: 15,
