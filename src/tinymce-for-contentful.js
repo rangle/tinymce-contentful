@@ -21,11 +21,11 @@ window.contentfulExtension.init(function (api) {
       selector: '#editor',
       plugins: p,
       toolbar: tb,
-      menubar: mb, 
+      menubar: mb,
       menu: {
         grid: {
-            title: "Grid",
-            items: "inserttable"
+          title: "Grid",
+          items: "inserttable"
         }
       },
       color_map: [
@@ -37,21 +37,31 @@ window.contentfulExtension.init(function (api) {
       resize: false,
       image_caption: true,
       style_formats: [
-        { title: 'Large Heading', block: 'h1', attributes: { class: '' } },
-        { title: 'Medium Heading', block: 'h2', attributes: { class: '' } },
-        { title: 'Small Heading', block: 'h3', attributes: { class: '' } },
-        { title: 'Editorial', block: 'p', attributes: { class: 'ds-editorial' } },
         {
-          title: 'Large Body',
-          block: 'p',
-          attributes: { class: 'ds-large-body' },
+          title: 'Headers',
+          items: [{ title: 'Large Heading', block: 'h1', attributes: { class: '' } },
+          { title: 'Medium Heading', block: 'h2', attributes: { class: '' } },
+          { title: 'Small Heading', block: 'h3', attributes: { class: '' } },
+          { title: 'Editorial', block: 'p', attributes: { class: 'ds-editorial' } },
+          {
+            title: 'Large Body',
+            block: 'p',
+            attributes: { class: 'ds-large-body' },
+          },
+          { title: 'Medium Body', block: 'p', attributes: { class: '' } },
+          {
+            title: 'Small Body',
+            block: 'p',
+            attributes: { class: 'ds-small-body' },
+          },]
         },
-        { title: 'Medium Body', block: 'p', attributes: { class: '' } },
         {
-          title: 'Small Body',
-          block: 'p',
-          attributes: { class: 'ds-small-body' },
-        },
+          title: 'List',
+          items: [{
+            title: 'UnOrdered List',
+            selector: 'ul',            
+          }]
+        }
       ],
       content_style:
         'h1 { font-size: 1.5rem; font-weight: 400; }' +
@@ -63,6 +73,9 @@ window.contentfulExtension.init(function (api) {
         '.ds-editorial { font-size: 1.25rem; font-weight: 400; }' +
         'table { border: 1px dotted grey }' +
         'tr { border-bottom: 1px dotted grey }',
+
+      content_style: 'ul { list-style: "/"}',
+
       init_instance_callback: function (editor) {
         var listening = true;
 
@@ -140,3 +153,4 @@ window.contentfulExtension.init(function (api) {
     tinymceForContentful(api);
   });
 });
+
