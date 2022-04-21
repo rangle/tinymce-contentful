@@ -2,9 +2,9 @@ window.contentfulExtension.init(function (api) {
   function tinymceForContentful(api) {
     function tweak(param) {
       var t = param.trim();
-      if (t === 'false') {
+      if (t === "false") {
         return false;
-      } else if (t === '') {
+      } else if (t === "") {
         return undefined;
       } else {
         return t;
@@ -18,19 +18,17 @@ window.contentfulExtension.init(function (api) {
     api.window.startAutoResizer();
 
     tinymce.init({
-      selector: '#editor',
+      selector: "#editor",
       plugins: p,
       toolbar: tb,
       menubar: mb,
       menu: {
         grid: {
           title: "Grid",
-          items: "inserttable"
-        }
+          items: "inserttable",
+        },
       },
-      color_map: [
-        "D44527", "Red-01"
-      ],
+      color_map: ["D44527", "Red-01"],
       min_height: 600,
       max_height: 750,
       autoresize_bottom_margin: 15,
@@ -38,58 +36,54 @@ window.contentfulExtension.init(function (api) {
       image_caption: true,
       style_formats: [
         {
-          title: 'Headers',
-          items: [{ title: 'Large Heading', block: 'h1', attributes: { class: '' } },
-          { title: 'Medium Heading', block: 'h2', attributes: { class: '' } },
-          { title: 'Small Heading', block: 'h3', attributes: { class: '' } },
-          { title: 'Editorial', block: 'p', attributes: { class: 'ds-editorial' } },
-          {
-            title: 'Large Body',
-            block: 'p',
-            attributes: { class: 'ds-large-body' },
-          },
-          { title: 'Medium Body', block: 'p', attributes: { class: '' } },
-          {
-            title: 'Small Body',
-            block: 'p',
-            attributes: { class: 'ds-small-body' },
-          },]
+          title: "Headers",
+          items: [
+            { title: "Large Heading", block: "h1", attributes: { class: "" } },
+            { title: "Medium Heading", block: "h2", attributes: { class: "" } },
+            { title: "Small Heading", block: "h3", attributes: { class: "" } },
+            {
+              title: "Editorial",
+              block: "p",
+              attributes: { class: "ds-editorial" },
+            },
+            {
+              title: "Large Body",
+              block: "p",
+              attributes: { class: "ds-large-body" },
+            },
+            { title: "Medium Body", block: "p", attributes: { class: "" } },
+            {
+              title: "Small Body",
+              block: "p",
+              attributes: { class: "ds-small-body" },
+            },
+          ],
         },
-        {
-          title: 'List',
-          items: [{
-            title: 'UnOrdered List',
-            selector: 'ul',
-            classes: 'unorderedListSlash'            
-          }]
-        }
       ],
       content_style:
-        'h1 { font-size: 1.5rem; font-weight: 400; }' +
-        'h2 { font-size: 1.25rem; font-weight: 500; }' +
-        'h3 { font-size: 1.125rem; font-weight: 500; }' +
-        '.ds-large-body { font-size: 1.125rem; font-weight: 400; }' +
-        '.ds-medium-body { font-size: 0.875rem; font-weight: 400; }' +
-        '.ds-small-body { font-size: 0.625rem; font-weight: 400; }' +
-        '.ds-editorial { font-size: 1.25rem; font-weight: 400; }' +
-        'table { border: 1px dotted grey }' +
-        'tr { border-bottom: 1px dotted grey }',
-
-      content_style: '.unorderedListSlash { list-style: "/"}',
+        "h1 { font-size: 1.5rem; font-weight: 400; }" +
+        "h2 { font-size: 1.25rem; font-weight: 500; }" +
+        "h3 { font-size: 1.125rem; font-weight: 500; }" +
+        ".ds-large-body { font-size: 1.125rem; font-weight: 400; }" +
+        ".ds-medium-body { font-size: 0.875rem; font-weight: 400; }" +
+        ".ds-small-body { font-size: 0.625rem; font-weight: 400; }" +
+        ".ds-editorial { font-size: 1.25rem; font-weight: 400; }" +
+        "table { border: 1px dotted grey }" +
+        "tr { border-bottom: 1px dotted grey }",
 
       init_instance_callback: function (editor) {
         var listening = true;
 
         function getEditorContent() {
-          return editor.getContent() || '';
+          return editor.getContent() || "";
         }
 
         function getApiContent() {
-          return api.field.getValue() || '';
+          return api.field.getValue() || "";
         }
 
         function setContent(x) {
-          var apiContent = x || '';
+          var apiContent = x || "";
           var editorContent = getEditorContent();
           if (apiContent !== editorContent) {
             //console.log('Setting editor content to: [' + apiContent + ']');
@@ -118,40 +112,39 @@ window.contentfulExtension.init(function (api) {
                 listening = true;
               })
               .catch(function (err) {
-                console.log('Error setting content', err);
+                console.log("Error setting content", err);
                 listening = true;
               });
           }
         }
 
         var throttled = _.throttle(onEditorChange, 500, { leading: true });
-        editor.on('change keyup setcontent blur', throttled);
+        editor.on("change keyup setcontent blur", throttled);
       },
     });
   }
 
   function loadScript(src, onload) {
-    var script = document.createElement('script');
-    script.setAttribute('src', src);
+    var script = document.createElement("script");
+    script.setAttribute("src", src);
     script.onload = onload;
     document.body.appendChild(script);
   }
 
   var sub =
-    location.host == 'contentful.staging.tiny.cloud' ? 'cdn.staging' : 'cdn';
+    location.host == "contentful.staging.tiny.cloud" ? "cdn.staging" : "cdn";
   var apiKey = api.parameters.installation.apiKey;
   var channel = api.parameters.installation.channel;
   var tinymceUrl =
-    'https://' +
+    "https://" +
     sub +
-    '.tiny.cloud/1/' +
+    ".tiny.cloud/1/" +
     apiKey +
-    '/tinymce/' +
+    "/tinymce/" +
     channel +
-    '/tinymce.min.js';
+    "/tinymce.min.js";
 
   loadScript(tinymceUrl, function () {
     tinymceForContentful(api);
   });
 });
-
