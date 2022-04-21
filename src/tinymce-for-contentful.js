@@ -59,7 +59,8 @@ window.contentfulExtension.init(function (api) {
           title: 'List',
           items: [{
             title: 'UnOrdered List',
-            selector: 'ul',            
+            selector: 'ul',
+            classes: 'unorderedListSlash'            
           }]
         }
       ],
@@ -74,7 +75,7 @@ window.contentfulExtension.init(function (api) {
         'table { border: 1px dotted grey }' +
         'tr { border-bottom: 1px dotted grey }',
 
-      content_style: 'ul { list-style: "/"}',
+      content_style: '.unorderedListSlash { list-style: "/"}',
 
       init_instance_callback: function (editor) {
         var listening = true;
