@@ -54,13 +54,13 @@ window.contentfulExtension.init(function (api) {
         },
       ],
       content_style:
-        'h1 { font-size: 1.5rem; font-weight: 400; }' +
-        'h2 { font-size: 1.25rem; font-weight: 500; }' +
-        'h3 { font-size: 1.125rem; font-weight: 500; }' +
-        '.ds-large-body { font-size: 1.125rem; font-weight: 400; }' +
-        '.ds-medium-body { font-size: 0.875rem; font-weight: 400; }' +
-        '.ds-small-body { font-size: 0.625rem; font-weight: 400; }' +
-        '.ds-editorial { font-size: 1.25rem; font-weight: 400; }' +
+        'h1 { font-size: 1.5rem !important; font-weight: 400; }' +
+        'h2 { font-size: 1.25rem !important; font-weight: 500 !important; }' +
+        'h3 { font-size: 1.125rem !important; font-weight: 500 !important; }' +
+        '.ds-large-body { font-size: 1.125rem !important; font-weight: 400; }' +
+        '.ds-medium-body { font-size: 0.875rem !important; font-weight: 400; }' +
+        '.ds-small-body { font-size: 0.625rem !important; font-weight: 400; }' +
+        '.ds-editorial { font-size: 1.25rem !important; font-weight: 400; }' +
         'table { border: 1px dotted grey }' +
         'tr { border-bottom: 1px dotted grey }',
       init_instance_callback: function (editor) {
