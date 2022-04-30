@@ -34,7 +34,7 @@ window.contentfulExtension.init(function (api) {
       autoresize_bottom_margin: 15,
       resize: false,
       image_caption: true,
-      default_link_target: "_blank",
+      link_assume_external_targets: true,
       style_formats: [
         {
           title: "Headers",
