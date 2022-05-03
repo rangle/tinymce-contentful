@@ -1,6 +1,6 @@
 {
-  "id": "TinyMCE (v2)",
-  "name": "TinyMCE (v2)",
+  "id": "TinyMCE (v5.10)",
+  "name": "TinyMCE (v5.10)",
   "src": "https://contentful.tiny.cloud/",
   "fieldTypes": ["Text"],
   "parameters": {
