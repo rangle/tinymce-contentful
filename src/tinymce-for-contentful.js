@@ -140,7 +140,7 @@ window.contentfulExtension.init(function (api) {
     sub +
     ".tiny.cloud/1/" +
     apiKey +
-    "/tinymce/" +
+    "/tinymce/6" +
     channel +
     "/tinymce.min.js";
 
