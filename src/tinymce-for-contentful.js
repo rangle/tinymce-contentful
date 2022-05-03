@@ -33,8 +33,7 @@ window.contentfulExtension.init(function (api) {
       max_height: 750,
       autoresize_bottom_margin: 15,
       resize: false,
-      image_caption: true,
-      default_link_target: "_self",
+      image_caption: true,      
       style_formats: [
         {
           title: "Headers",
@@ -140,7 +139,7 @@ window.contentfulExtension.init(function (api) {
     sub +
     ".tiny.cloud/1/" +
     apiKey +
-    "/tinymce/6" +
+    "/tinymce/" +
     channel +
     "/tinymce.min.js";
 
