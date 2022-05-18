@@ -80,10 +80,10 @@ window.contentfulExtension.init(function (api) {
         ".ds-medium-body { font-size: 0.875rem !important; font-weight: 400; }" +
         ".ds-small-body { font-size: 0.625rem !important; font-weight: 400; }" +
         ".ds-editorial { font-size: 1.25rem !important; font-weight: 400; }" +
-        "table { border: none }" +
-        "tr { border-bottom: 1px dotted grey }" +
-        ".cms-grid { border: 1px dotted grey }",
-       
+        "table{border: solid 1px white}" +
+        "table > tbody > tr > td{border-bottom: solid 1px black!important; border-top:1px solid white!important; border-left:1px dotted grey!important; border-right:1px dotted grey!important}" +
+        "table.cms-grid{border: dotted 1px grey!important}" +
+        "table.cms-grid > tbody > tr > td { border: 1px dotted grey!important;}",
       init_instance_callback: function (editor) {
         var listening = true;
 
