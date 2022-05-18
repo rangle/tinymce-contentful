@@ -80,8 +80,10 @@ window.contentfulExtension.init(function (api) {
         ".ds-medium-body { font-size: 0.875rem !important; font-weight: 400; }" +
         ".ds-small-body { font-size: 0.625rem !important; font-weight: 400; }" +
         ".ds-editorial { font-size: 1.25rem !important; font-weight: 400; }" +
-        "table { border: 1px dotted grey }" +
-        "tr { border-bottom: 1px dotted grey }",
+        "table { border: none }" +
+        "tr { border-bottom: 1px dotted grey }" +
+        ".cms-grid { border: 1px dotted grey }",
+       
       init_instance_callback: function (editor) {
         var listening = true;
 
